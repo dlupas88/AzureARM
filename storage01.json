@@ -1,0 +1,26 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageKind": {
+            "type": "string"            
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [{
+        "name": "dstdan1502",
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2021-04-01",
+        "tags": {
+            "displayName": "dstdan1502"
+        },
+        "location": "[resourceGroup().location]",
+        "kind": "StorageV2",
+        "sku": {
+            "name": "[parameters('storageKind')]",
+            "tier": "Standard"
+        }
+    }],
+    "outputs": {}
+}
